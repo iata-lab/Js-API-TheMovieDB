@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Clone - terrylucas</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Considera añadir una librería de iconos como Font Awesome para iconos reales -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> -->
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h1 class="logo">Instagram</h1>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#"><span class="icon">🏠</span> Home</a></li>
+                    <li><a href="#"><span class="icon">🔍</span> Search</a></li>
+                    <li><a href="#"><span class="icon">🧭</span> Explore</a></li>
+                    <li><a href="#"><span class="icon">🎥</span> Reels</a></li>
+                    <li><a href="#"><span class="icon">💬</span> Messages</a></li>
+                    <li><a href="#"><span class="icon">❤️</span> Notifications</a></li>
+                    <li><a href="#"><span class="icon">➕</span> Create</a></li>
+                    <!-- Añadido 'active' y la imagen de perfil pequeña -->
+                    <li class="active"><a href="#"><img src="https://i.imgur.com/bE7aQ2K.png" alt="Profile Pic Icon"
+                                class="nav-profile-icon"> Profile</a></li>
+                </ul>
+            </nav>
+            <!-- Separado 'More' para posicionarlo abajo -->
+            <div class="sidebar-more">
+                <a href="#"><span class="icon">≡</span> More</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Profile Header -->
+            <header class="profile-header">
+                <div class="profile-pic-container">
+                    <!-- Imagen de perfil correcta -->
+                    <img src="https://i.imgur.com/bE7aQ2K.png" alt="Terry Lucas Profile Picture" class="profile-pic">
+                </div>
+                <div class="profile-info">
+                    <div class="profile-info-top">
+                        <h2 class="username">terrylucas</h2>
+                        <button class="follow-btn">Follow</button>
+                        <button class="options-btn">•••</button> <!-- Cambiado span a button -->
+                    </div>
+                    <div class="stats">
+                        <span><strong>1,258</strong> posts</span>
+                        <span><strong>4M</strong> followers</span>
+                        <span><strong>1,250</strong> following</span>
+                    </div>
+                    <div class="name">
+                        <p>Terry Lucas</p>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Stories / Highlights -->
+            <section class="highlights">
+                <!-- Usando las imágenes correctas de los highlights -->
+                <div class="highlight-item">
+                    <div class="highlight-image-wrapper">
+                        <img src="https://i.imgur.com/bE7aQ2K.png" alt="Highlight 1">
+                    </div>
+                    <p>Made Us</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-image-wrapper">
+                        <img src="https://i.imgur.com/jJ0f6F5.png" alt="Highlight 2">
+                    </div>
+                    <p>Lorem...</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-image-wrapper">
+                        <img src="https://i.imgur.com/Nq8Zq4H.png" alt="Highlight 3">
+                    </div>
+                    <p>Lorem...</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-image-wrapper">
+                        <img src="https://i.imgur.com/z5p6y5L.png" alt="Highlight 4">
+                    </div>
+                    <p>Lorem...</p>
+                </div>
+            </section>
+
+            <!-- Tabs -->
+            <nav class="tabs">
+                <!-- Usando <a> para las pestañas -->
+                <a href="#" class="tab active"><span class="icon">📑</span> POSTS</a>
+                <a href="#" class="tab"><span class="icon">📱</span> GUIDES</a>
+                <a href="#" class="tab"><span class="icon">📹</span> REELS</a>
+                <a href="#" class="tab"><span class="icon">🎥</span> VIDEOS</a>
+                <a href="#" class="tab"><span class="icon">🏷️</span> TAGGED</a>
+            </nav>
+
+            <!-- Posts Grid -->
+            <section class="posts-grid">
+                <!-- Usando las imágenes correctas y añadiendo iconos de overlay -->
+                <div class="post">
+                    <img src="https://i.imgur.com/5wz5U1h.png" alt="Post 1">
+                    <span class="post-icon multiple">❐</span> <!-- Icono para Múltiple -->
+                </div>
+                <div class="post">
+                    <img src="https://i.imgur.com/oBq5Z3B.png" alt="Post 2">
+                    <span class="post-icon reel">▶</span> <!-- Icono para Reel -->
+                </div>
+                <div class="post">
+                    <img src="https://i.imgur.com/8wY5A6W.png" alt="Post 3">
+                </div>
+                <div class="post">
+                    <img src="https://i.imgur.com/Xv3Z4zU.png" alt="Post 4">
+                </div>
+                <div class="post">
+                    <img src="https://i.imgur.com/u7f9o1L.png" alt="Post 5">
+                </div>
+                <div class="post">
+                    <img src="https://i.imgur.com/eX1qZ0T.png" alt="Post 6">
+                    <span class="post-icon multiple">❐</span> <!-- Icono para Múltiple -->
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

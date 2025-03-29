@@ -1,0 +1,381 @@
+/* Reset básico y fuentes globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Fuente principal Segoe UI si está disponible, luego sistema */
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    background-color: #FAFAFA; /* Color de fondo principal de Figma */
+    color: #262626; /* Color de texto principal de Figma */
+    font-size: 14px; /* Tamaño base */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+}
+
+.container {
+    display: flex;
+    max-width: calc(244px + 935px + 60px); /* Sidebar + Contenido + Margen central aprox */
+    margin: 20px auto; /* Centrado con margen superior/inferior */
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    width: 244px; /* Ancho exacto de Figma */
+    height: calc(100vh - 40px); /* Altura relativa a la ventana menos márgenes body */
+    position: fixed; /* Fijo en la pantalla */
+    top: 20px; /* Alineado con margen superior del container */
+    left: auto; /* Dejar que el 'margin: auto' del container lo posicione */
+    background-color: #fff;
+    border-right: 1px solid #dbdbdb; /* Borde de Figma */
+    padding: 8px 12px 20px 12px; /* Ajuste de padding */
+    display: flex;
+    flex-direction: column; /* Para posicionar 'More' abajo */
+}
+
+.logo {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Usar fuente similar si no se tiene la del logo */
+    font-size: 28px; /* Tamaño aproximado */
+    font-weight: 600;
+    padding: 25px 12px 16px 12px; /* Padding específico de Figma para header/logo */
+    margin-bottom: 19px; /* Margen inferior logo */
+}
+
+.menu {
+    flex-grow: 1; /* Ocupa el espacio disponible empujando 'More' hacia abajo */
+}
+
+.menu li a,
+.sidebar-more a {
+    display: flex;
+    align-items: center;
+    padding: 12px; /* Padding interno items */
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px; /* Bordes redondeados */
+    margin-bottom: 8px; /* Espacio entre items */
+    transition: background-color 0.1s ease-in-out;
+}
+
+.menu li a:hover,
+.sidebar-more a:hover {
+    background-color: #f2f2f2; /* Hover sutil */
+}
+
+.menu li.active a {
+    font-weight: 700; /* Fuente Bold para activo */
+}
+
+.menu .icon,
+.sidebar-more .icon {
+    margin-right: 16px; /* Espacio icono-texto de Figma */
+    font-size: 24px; /* Tamaño iconos sidebar */
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+}
+
+.nav-profile-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 16px; /* Mismo margen que los iconos */
+    border: 1px solid rgba(0, 0, 0, 0.098); /* Borde sutil como en Figma */
+    object-fit: cover;
+}
+
+.sidebar-more {
+    margin-top: auto; /* Empuja 'More' al final */
+}
+
+/* --- Main Content --- */
+.main-content {
+    width: 935px; /* Ancho del contenido principal de Figma */
+    margin-left: calc(244px + 40px); /* Ancho sidebar + un espacio */
+    padding-top: 20px; /* Espacio superior */
+}
+
+/* Profile Header */
+.profile-header {
+    display: flex;
+    align-items: flex-start; /* Alinea arriba */
+    padding-bottom: 44px; /* Espacio inferior header según Figma */
+    /* padding-top: 73px; -> Esto parece demasiado, ajustado con el padding del main-content */
+    margin-bottom: 44px; /* Espacio antes de highlights */
+}
+
+.profile-pic-container {
+    /* Padding de Figma aplicado como margen */
+    margin-right: 60px; /* Espacio visual entre foto e info, ajustar si es necesario */
+    flex-shrink: 0; /* Evita que se encoja */
+}
+
+.profile-pic {
+    width: 150px; /* Tamaño exacto Figma */
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-info {
+    padding-top: 14px; /* Padding superior del bloque de info en Figma */
+    flex-grow: 1;
+}
+
+.profile-info-top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Espacio username-stats de Figma */
+    height: 40px; /* Altura del contenedor según Figma */
+}
+
+.username {
+    font-size: 28px; /* Tamaño username Figma */
+    font-weight: 300; /* Peso ligero Figma */
+    line-height: 32px;
+    margin-right: 20px;
+}
+
+.follow-btn {
+    background-color: #0095F6; /* Color azul Figma */
+    color: white;
+    border: none;
+    padding: 6px 24px; /* Padding botón Figma */
+    border-radius: 8px; /* Más redondeado que 4px de Figma, pero visualmente común */
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    margin-right: 8px; /* Espacio botón-opciones */
+}
+
+.options-btn {
+    font-size: 24px; /* Tamaño icono '...' */
+    font-weight: bold;
+    color: #262626;
+    padding: 8px; /* Área clickeable */
+}
+
+.stats {
+    display: flex;
+    gap: 40px; /* Espacio entre stats de Figma */
+    margin-bottom: 20px; /* Espacio stats-name de Figma */
+}
+
+.stats span {
+    font-size: 16px; /* Tamaño texto stats Figma */
+    line-height: 18px;
+}
+
+.stats span strong {
+    font-weight: 600; /* Números en negrita */
+}
+
+.name p {
+    font-size: 16px; /* Tamaño nombre Figma */
+    font-weight: 600; /* Peso nombre Figma */
+    line-height: 24px;
+}
+
+/* Stories / Highlights */
+.highlights {
+    display: flex;
+    gap: 30px; /* Espacio visual entre highlights */
+    /* padding: 0px 0px 44px 48px; -> Padding Figma ajustado */
+    margin-bottom: 44px; /* Espacio antes de tabs */
+    padding-left: 10px; /* Pequeño padding izquierdo */
+}
+
+.highlight-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 87px; /* Ancho contenedor imagen + borde/padding */
+}
+.highlight-image-wrapper {
+    width: 87px; /* Incluye borde */
+    height: 87px;
+    border-radius: 50%;
+    /* Simula el doble borde con un gradiente o un pseudo-elemento si es necesario */
+    /* Más simple: un solo borde gris claro */
+    border: 1px solid #dbdbdb;
+    padding: 3px; /* Espacio para el borde */
+    display: flex; /* Centra la imagen interior */
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px; /* Espacio imagen-texto */
+}
+
+.highlight-item img {
+    width: 77px; /* Tamaño imagen interior Figma */
+    height: 77px;
+    border-radius: 50%;
+    object-fit: cover;
+    /* border: 2.5px solid #FFFFFF; -> No aplica con wrapper */
+}
+
+.highlight-item p {
+    font-size: 14px; /* Tamaño texto highlight Figma */
+    font-weight: 600; /* Peso texto highlight Figma */
+    line-height: 16px;
+    color: #262626;
+    letter-spacing: 0.12px; /* Espaciado letras Figma */
+    /* Para controlar texto largo */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%; /* Ocupa el ancho del contenedor */
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content: center; /* Centra las pestañas */
+    gap: 60px; /* Espacio entre pestañas de Figma */
+    border-top: 1px solid #dbdbdb; /* Borde superior general */
+    margin-bottom: 28px; /* Espacio antes de la grid (igual al gap de la grid) */
+}
+
+.tab {
+    text-decoration: none;
+    color: #8E8E8E; /* Color inactivo Figma */
+    padding: 18px 0; /* Padding vertical pestañas */
+    font-size: 12px; /* Tamaño texto pestañas Figma */
+    font-weight: 600; /* Peso texto pestañas Figma */
+    letter-spacing: 1px; /* Espaciado letras Figma */
+    text-transform: uppercase; /* Mayúsculas */
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-top: 1px solid transparent; /* Borde placeholder */
+    margin-top: -1px; /* Solapa el borde superior general */
+}
+
+.tab.active {
+    color: #262626; /* Color activo Figma */
+    border-top: 1px solid #262626; /* Borde activo Figma */
+}
+
+.tab .icon {
+    margin-right: 6px; /* Espacio icono-texto pestaña Figma */
+    font-size: 12px; /* Tamaño icono pestaña Figma */
+}
+
+/* Posts Grid */
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    gap: 28px; /* Espacio entre posts de Figma */
+}
+
+.post {
+    position: relative; /* Para posicionar el icono */
+    aspect-ratio: 1 / 1; /* Mantiene el cuadrado */
+    overflow: hidden; /* Asegura que la imagen no se salga */
+}
+
+.post img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Rellena el contenedor sin deformar */
+    display: block; /* Evita espacio extra debajo de la imagen */
+}
+
+/* Iconos overlay en posts */
+.post-icon {
+    position: absolute;
+    top: 8px; /* Ajustar posición */
+    right: 8px;
+    color: white;
+    font-size: 18px; /* Tamaño icono overlay */
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.7); /* Sombra para legibilidad */
+    z-index: 1; /* Asegura que esté encima de la imagen */
+    pointer-events: none; /* No interfiere con clics en la imagen */
+}
+
+/* Puedes añadir estilos específicos si los iconos son diferentes */
+.post-icon.multiple {
+    /* Estilo específico si es necesario */
+}
+.post-icon.reel {
+    /* Estilo específico si es necesario */
+}
+
+/* Media Queries básicas (opcional, para mejorar en móvil) */
+@media (max-width: 1000px) { /* Punto de ruptura antes de que el contenido choque */
+    .container {
+        margin: 0;
+        max-width: 100%;
+    }
+    .sidebar {
+        /* Ocultar sidebar o cambiar a menú inferior en móvil */
+         display: none;
+    }
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 15px; /* Reducir padding */
+    }
+    .profile-header {
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .profile-pic-container {
+        width: 77px; /* Tamaño de foto de perfil móvil */
+        height: 77px;
+        margin-right: 28px;
+    }
+    .profile-pic {
+        width: 77px;
+        height: 77px;
+    }
+    .username { font-size: 22px; }
+    .stats { font-size: 14px; gap: 20px; margin-bottom: 10px; }
+    .name { margin-top: 10px; } /* Mover nombre debajo de stats */
+
+    .highlights {
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-bottom: 20px;
+        /* Podría necesitar scroll horizontal en móvil */
+        overflow-x: auto;
+        padding-bottom: 10px; /* Espacio para scrollbar si aparece */
+        gap: 15px;
+    }
+     .highlight-item {
+        flex-shrink: 0; /* Evita que se encojan los items */
+     }
+
+
+    .tabs {
+        gap: 20px; /* Menos espacio en tabs */
+        margin-bottom: 3px; /* Menos espacio antes de la grid */
+    }
+    .tab { padding: 12px 0; }
+
+    .posts-grid {
+        gap: 3px; /* Gap mínimo entre posts */
+    }
+    .post-icon { font-size: 14px; top: 5px; right: 5px; }
+}

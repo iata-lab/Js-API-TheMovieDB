@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram Clone</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__top">
+      <div class="header__logo">
+        <img src="https://www.freepnglogos.com/uploads/instagram-logo-png-12.png" alt="Instagram Logo"
+          class="header__logo-image">
+      </div>
+      <div class="header__nav">
+        <button class="header__button">+</button>
+        <button class="header__button">❤️</button>
+        <button class="header__button">📥</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Stories Section -->
+    <div class="stories">
+      <div class="story">
+        <div class="story__image-container">
+          <img src="https://picsum.photos/200/300" alt="Story Image" class="story__image">
+        </div>
+        <p class="story__username">user1</p>
+      </div>
+      <div class="story">
+        <div class="story__image-container">
+          <img src="https://picsum.photos/200/301" alt="Story Image" class="story__image">
+        </div>
+        <p class="story__username">user2</p>
+      </div>
+      <div class="story">
+        <div class="story__image-container">
+          <img src="https://picsum.photos/200/302" alt="Story Image" class="story__image">
+        </div>
+        <p class="story__username">user3</p>
+      </div>
+    </div>
+
+    <!-- Posts Section -->
+    <div class="posts">
+      <!-- Post 1 -->
+      <article class="post">
+        <header class="post__header">
+          <div class="post__profile">
+            <img src="https://picsum.photos/200/300" alt="Profile Picture" class="post__profile-image">
+            <h2 class="post__username">user1</h2>
+          </div>
+        </header>
+        <div class="post__image-container">
+          <img src="https://picsum.photos/600/800" alt="Post Image" class="post__image">
+        </div>
+        <div class="post__content">
+          <div class="post__actions">
+            <button class="post__action">❤️</button>
+            <button class="post__action">📤</button>
+            <button class="post__action">📢</button>
+          </div>
+          <p class="post__likes">1,234 likes</p>
+          <p class="post__description"><strong>user1</strong> This is a sample post description.</p>
+          <div class="post__comments">
+            <p class="post__comment"><strong>user2</strong> Great post! 👍</p>
+            <p class="post__comment"><strong>user3</strong> Amazing! 😍</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Post 2 -->
+      <article class="post">
+        <header class="post__header">
+          <div class="post__profile">
+            <img src="https://picsum.photos/200/301" alt="Profile Picture" class="post__profile-image">
+            <h2 class="post__username">user2</h2>
+          </div>
+        </header>
+        <div class="post__image-container">
+          <img src="https://picsum.photos/600/801" alt="Post Image" class="post__image">
+        </div>
+        <div class="post__content">
+          <div class="post__actions">
+            <button class="post__action">❤️</button>
+            <button class="post__action">📤</button>
+            <button class="post__action">📢</button>
+          </div>
+          <p class="post__likes">987 likes</p>
+          <p class="post__description"><strong>user2</strong> Another sample post description.</p>
+          <div class="post__comments">
+            <p class="post__comment"><strong>user1</strong> Nice! 👌</p>
+            <p class="post__comment"><strong>user3</strong> Cool! 😎</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__content">
+      <p>© 2023 Instagram Clone</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
